@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace CepAPI.DAL
 {
+    //Install-Package Microsoft.EntityFrameworkCore.SqlServer
+    //Install-Package Microsoft.EntityFrameworkCore.Tools
+    //Code First
+    //Add-Migration InitialCreate
+    //Update-Database
     public class CepApiContext : DbContext
     {
         public DbSet<CEP> Ceps { get; set; }

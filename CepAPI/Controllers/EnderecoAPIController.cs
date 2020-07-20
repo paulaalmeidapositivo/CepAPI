@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 
+// Nome: Paula Almeida 
 namespace CepAPI.Controllers
 {
     [Route("api/Endereco")]
@@ -48,9 +49,11 @@ namespace CepAPI.Controllers
 
         [HttpDelete]
         [Route("DeletarEndereco")]
-        public ActionResult<CEP> DeletarEndereco(int id)
+        public IActionResult DeletarEndereco(int id)
         {
-            return gerenciador.Deletar(id);
+            gerenciador.Deletar(id);
+
+            return Ok();
         }
     }
 }

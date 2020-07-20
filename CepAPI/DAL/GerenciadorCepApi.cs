@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CepAPI.DAL
 {
@@ -59,20 +57,17 @@ namespace CepAPI.DAL
             return cep;
         }
 
-        public CEP Deletar(int id)
+        public void Deletar(int id)
         {
-            CEP cep = null;
             using (var db = new CepApiContext())
             {
-                cep = db.Ceps.Where(x => x.ID == id).FirstOrDefault();
+                CEP cep = db.Ceps.Where(x => x.ID == id).FirstOrDefault();
                 if (cep != null)
                 {
                     db.Remove(cep);
                     db.SaveChanges();
                 }
             }
-
-            return cep;
         }
     }
 }

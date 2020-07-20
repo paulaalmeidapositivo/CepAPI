@@ -19,6 +19,7 @@ namespace CepAPI.Controllers
             this.gerenciador = new GerenciadorCepApi();
         }
 
+        // GET: /api/Endereco/ListarEnderecos
         [HttpGet]
         [Route("ListarEnderecos")]
         public ActionResult<List<CEP>> ListarEnderecos()
@@ -26,6 +27,7 @@ namespace CepAPI.Controllers
             return gerenciador.Listar();
         }
 
+        // GET: /api/Endereco/ListarEndereco/{cep}
         [HttpGet]
         [Route("ListarEndereco")]
         public ActionResult<CEP> ListarEndereco(string cep)
@@ -33,6 +35,7 @@ namespace CepAPI.Controllers
             return gerenciador.Listar(cep);
         }
 
+        // POST: /api/Endereco/CadastrarEndereco
         [HttpPost]
         [Route("CadastrarEndereco")]
         public ActionResult<CEP> CadastrarEndereco(CEP cep)
@@ -40,6 +43,7 @@ namespace CepAPI.Controllers
             return gerenciador.Cadastrar(cep);
         }
 
+        // PUT: /api/Endereco/AlterarEndereco
         [HttpPut]
         [Route("AlterarEndereco")]
         public ActionResult<CEP> AlterarEndereco(CEP cep)
@@ -47,6 +51,7 @@ namespace CepAPI.Controllers
             return gerenciador.Alterar(cep);
         }
 
+        // DELETE: /api/Endereco/DeletarEndereco/{id}
         [HttpDelete]
         [Route("DeletarEndereco")]
         public IActionResult DeletarEndereco(int id)
